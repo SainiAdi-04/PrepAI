@@ -27,8 +27,17 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+// import { db } from "@/lib/prisma";
+// import { auth } from "@clerk/nextjs/server";
 
-const DashboardView = ({ insights }) => {
+
+// const { userId } = await auth();
+
+//   const user = await db.user.findUnique({
+//     where: { clerkUserId: userId }
+//   });
+
+const DashboardView = ({ insights, user }) => {
   // Transform salary data for the chart
   const salaryData = insights.salaryRanges.map((range) => ({
     name: range.role,
@@ -77,6 +86,9 @@ const DashboardView = ({ insights }) => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <Badge variant="outline">Last updated: {lastUpdatedDate}</Badge>
+      </div>
+      <div>
+        <p className="text-sm font-medium pl-2">Hello, {user.name}</p>
       </div>
 
       {/* Market Overview Cards */}

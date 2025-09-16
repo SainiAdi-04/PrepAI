@@ -1,7 +1,26 @@
 PrepAI - AI-Powered Placement Preparation Platform
 ==================================================
 
+**Developer Information:**
+- **Name**: Aditya Saini
+- **University**: IIT Bhilai
+- **Department**: Software
+-----------
+
+📝 Interaction Logs
+----------
+https://prepai.notion.site/Code-Generation-Logs-25009eb4b65e80f0b5c0c974e0d5a4ef
+
+
+🖧 System Design Document
+----------
+https://prepai.notion.site/Design-Document-27009eb4b65e806287f4ce9f036f806f
+
+
+-----------
+
 > Transform your career preparation with intelligent AI-driven insights and personalized learning experiences.
+
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js) ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&logo=javascript) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?style=flat-square&logo=tailwind-css) ![Gemini API](https://img.shields.io/badge/Gemini-API-4285F4?style=flat-square&logo=google)
 
@@ -31,12 +50,11 @@ PrepAI is a cutting-edge placement preparation platform that leverages artificia
 
 -   Real-time progress tracking
 -   Detailed performance metrics
--   Comparative analysis with peers
--   Personalized study recommendations
+-   Interactive Graphs
 
 ### 📄 AI Resume Generator
 
--   Industry-specific resume templates
+
 -   AI-powered content optimization
 -   ATS-friendly formatting
 -   One-click PDF download functionality
@@ -50,8 +68,7 @@ PrepAI is a cutting-edge placement preparation platform that leverages artificia
 -   **Framework**: Next.js 15 with App Router
 -   **UI Library**: React 18 with JavaScript
 -   **Styling**: Tailwind CSS
--   **Components**: Custom component library
--   **State Management**: React Hooks & Context API
+-   **Components**: Shadcn
 
 ### Backend & AI
 
@@ -63,10 +80,7 @@ PrepAI is a cutting-edge placement preparation platform that leverages artificia
 
 ### Infrastructure
 
--   **Deployment**: Vercel (recommended)
 -   **Database**: Neon Database
--   **File Storage**: Vercel Blob Storage
--   **Analytics**: Vercel Analytics
 
 🚀 Getting Started
 ------------------
@@ -81,31 +95,28 @@ PrepAI is a cutting-edge placement preparation platform that leverages artificia
 
 1.  **Clone the repository**
 
-    ```
+    ```bash
     git clone https://github.com/yourusername/prepai.git
     cd prepai
-
     ```
 
 2.  **Install dependencies**
 
-    ```
+    ```bash
     npm install
     # or
     yarn install
-
     ```
 
 3.  **Set up environment variables**
 
-    ```
-    cp .env.example .env.local
-
+    ```bash
+    cp .env.example .env
     ```
 
     Configure the following variables:
 
-    ```
+    ```env
     # Database
     DATABASE_URL="your_neon_database_url"
 
@@ -126,19 +137,25 @@ PrepAI is a cutting-edge placement preparation platform that leverages artificia
 
     # App Configuration
     NEXT_PUBLIC_APP_URL="http://localhost:3000"
-
     ```
 
-4.  **Run the development server**
+4.  **Start the Inngest development server**
 
+    ```bash
+    npx inngest-cli@latest dev
     ```
+
+    In your browser open `http://localhost:8288` to see the development UI where you can test the background functions.
+
+5.  **Run the development server**
+
+    ```bash
     npm run dev
     # or
     yarn dev
-
     ```
 
-5.  **Open your browser** Navigate to [http://localhost:3000](http://localhost:3000/)
+6.  **Open your browser** Navigate to [http://localhost:3000](http://localhost:3000/)
 
 📁 Project Structure
 --------------------
@@ -189,9 +206,22 @@ prepai/
 ├── postcss.config.mjs            # PostCSS configuration
 ├── README.md                     # Project documentation
 └── tailwind.config.js            # Tailwind CSS configuration
-
 ```
 
+📸 Screenshots
+-----------------
+![alt text](<Screenshot from 2025-09-17 00-52-45.png>)
+
+![alt text](<Screenshot from 2025-09-17 00-53-16.png>)
+
+![alt text](<Screenshot from 2025-09-17 00-53-46.png>)
+
+![alt text](<Screenshot from 2025-09-17 00-53-58.png>)
+
+![alt text](image.png)
+
+![alt text](<Screenshot from 2025-09-17 00-54-17.png>)
+-----------------
 🔧 Key Components
 -----------------
 
@@ -199,13 +229,11 @@ prepai/
 
 -   **Gemini API**: Powers intelligent question generation, resume optimization, and industry insights
 -   **Content Generation**: Dynamic test questions and personalized recommendations
--   **Natural Language Processing**: Resume content enhancement and skill extraction
+-   **Content Suggestion**: Resume content enhancement and skill extraction
 
 ### Background Processing
 
 -   **Inngest**: Handles heavy AI processing tasks asynchronously
--   **Queue Management**: Efficient processing of resume generation and test analysis
--   **Scalable Architecture**: Supports high-volume concurrent users
 
 ### Database Architecture
 
@@ -225,44 +253,18 @@ prepai/
 ### 2\. Adaptive Testing System
 
 -   Questions generated using Gemini AI based on job requirements
--   Real-time difficulty adjustment based on user performance
 -   Comprehensive analytics and progress tracking
 
 ### 3\. Resume Intelligence
 
 -   AI-powered resume optimization using industry best practices
--   ATS score calculation and improvement suggestions
--   Multiple professional templates with customization options
 
-🤝 Contributing
----------------
 
-We welcome contributions! Please follow these steps:
-
-1.  Fork the repository
-2.  Create a feature branch (`git checkout -b feature/amazing-feature`)
-3.  Commit your changes (`git commit -m 'Add amazing feature'`)
-4.  Push to the branch (`git push origin feature/amazing-feature`)
-5.  Open a Pull Request
-
-### Development Guidelines
-
--   Follow the existing code style and conventions
--   Write meaningful commit messages
--   Add tests for new features
--   Update documentation as needed
-
-🙏 Acknowledgments
-------------------
-
--   **Google Gemini**: For providing powerful AI capabilities
--   **Inngest**: For reliable background job processing
--   **Neon**: For serverless PostgreSQL database
--   **Vercel**: For seamless deployment and hosting
--   **Next.js Team**: For the amazing framework
 
 * * * * *
 
-**Built with ❤️ by the PrepAI Team**
+**Built with ❤️ by Aditya Saini and AI**
+
+
 
 *Empowering careers through intelligent preparation*

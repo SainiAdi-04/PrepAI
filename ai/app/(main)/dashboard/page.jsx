@@ -2,6 +2,8 @@ import { getIndustryInsights } from "@/actions/dashboard";
 import DashboardView from "./_components/dashboard-view";
 import { getUserOnboardingStatus } from "@/actions/user";
 import { redirect } from "next/navigation";
+import { db } from "@/lib/prisma";
+import { auth } from "@clerk/nextjs/server";
 
 export default async function DashboardPage() {
   const { isOnboarded } = await getUserOnboardingStatus();
@@ -13,10 +15,15 @@ export default async function DashboardPage() {
   }
 
   const insights = await getIndustryInsights();
+  const { userId } = await auth();
+
+  const user = await db.user.findUnique({
+    where: { clerkUserId: userId }
+  });
 
   return (
     <div className="container mx-auto">
-      <DashboardView insights={insights} />
+      <DashboardView insights={insights} user={user} />
     </div>
   );
 }
