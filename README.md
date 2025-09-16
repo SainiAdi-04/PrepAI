@@ -224,12 +224,6 @@ prepai/
 <img width="1920" height="1027" alt="Screenshot from 2025-09-17 00-54-17" src="https://github.com/user-attachments/assets/82520239-9fa3-40df-9ba9-858799a579dc" />
 
 
-
-
-
-![alt text](image.png)
-
-![alt text](<Screenshot from 2025-09-17 00-54-17.png>)
 -----------------
 🔧 Key Components
 -----------------
