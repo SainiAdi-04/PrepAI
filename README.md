@@ -4,7 +4,7 @@ PrepAI - AI-Powered Placement Preparation Platform
 **Developer Information:**
 - **Name**: Aditya Saini
 - **University**: IIT Bhilai
-- **Department**: Software
+- **Department**: Mechanical Engineering
 -----------
 
 📝 Interaction Logs
