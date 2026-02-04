@@ -1,24 +1,6 @@
 PrepAI - AI-Powered Placement Preparation Platform
 ==================================================
 
-**Developer Information:**
-- **Name**: Aditya Saini
-- **University**: IIT Bhilai
-- **Department**: Mechanical Engineering
------------
-
-📝 Interaction Logs
-----------
-https://prepai.notion.site/Code-Generation-Logs-25009eb4b65e80f0b5c0c974e0d5a4ef
-
-
-🖧 System Design Document
-----------
-https://prepai.notion.site/Design-Document-27009eb4b65e806287f4ce9f036f806f
-
-
------------
-
 > Transform your career preparation with intelligent AI-driven insights and personalized learning experiences.
 
 
@@ -207,22 +189,6 @@ prepai/
 ├── README.md                     # Project documentation
 └── tailwind.config.js            # Tailwind CSS configuration
 ```
-
-📸 Screenshots
------------------
-<img width="1920" height="1027" alt="Screenshot from 2025-09-17 00-52-45" src="https://github.com/user-attachments/assets/bd3cc94e-b76a-4845-9006-7bdcbffc8c14" />
-
-
-<img width="1920" height="1027" alt="Screenshot from 2025-09-17 00-53-16" src="https://github.com/user-attachments/assets/c673af15-6947-4802-b1e9-f58fb46e3f3c" />
-
-
-<img width="1920" height="1027" alt="Screenshot from 2025-09-17 00-53-58" src="https://github.com/user-attachments/assets/56b88660-dbf1-40b1-bfcb-a02bf5ea5611" />
-<img width="1920" height="1027" alt="Screenshot from 2025-09-17 00-53-46" src="https://github.com/user-attachments/assets/c04f705a-eb7b-414b-9110-db57768d5b9a" />
-
-<img width="1920" height="1027" alt="Screenshot from 2025-09-17 00-57-30" src="https://github.com/user-attachments/assets/401f8350-e272-4ae5-81f2-6e30f1e5f9fa" />
-
-<img width="1920" height="1027" alt="Screenshot from 2025-09-17 00-54-17" src="https://github.com/user-attachments/assets/82520239-9fa3-40df-9ba9-858799a579dc" />
-
 
 -----------------
 🔧 Key Components
