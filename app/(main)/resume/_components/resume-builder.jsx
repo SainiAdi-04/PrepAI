@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -21,8 +21,8 @@ import { saveResume } from "@/actions/resume";
 import { EntryForm } from "./entry-form";
 import useFetch from "@/hooks/use-fetch";
 import { useUser } from "@clerk/nextjs";
-import { entriesToMarkdown } from "@/app/lib/helper";
-import { resumeSchema } from "@/app/lib/schema";
+import { entriesToMarkdown } from "@/lib/helper";
+import { resumeSchema } from "@/lib/schema";
 import html2pdf from "html2pdf.js/dist/html2pdf.min.js";
 
 export default function ResumeBuilder({ initialContent }) {
@@ -59,29 +59,7 @@ export default function ResumeBuilder({ initialContent }) {
   // Watch form fields for preview updates
   const formValues = watch();
 
-  useEffect(() => {
-    if (initialContent) setActiveTab("preview");
-  }, [initialContent]);
-
-  // Update preview content when form values change
-  useEffect(() => {
-    if (activeTab === "edit") {
-      const newContent = getCombinedContent();
-      setPreviewContent(newContent ? newContent : initialContent);
-    }
-  }, [formValues, activeTab]);
-
-  // Handle save result
-  useEffect(() => {
-    if (saveResult && !isSaving) {
-      toast.success("Resume saved successfully!");
-    }
-    if (saveError) {
-      toast.error(saveError.message || "Failed to save resume");
-    }
-  }, [saveResult, saveError, isSaving]);
-
-  const getContactMarkdown = () => {
+  const getContactMarkdown = useCallback(() => {
     const { contactInfo } = formValues;
     const parts = [];
     if (contactInfo.email) parts.push(`📧 ${contactInfo.email}`);
@@ -91,12 +69,12 @@ export default function ResumeBuilder({ initialContent }) {
     if (contactInfo.twitter) parts.push(`🐦 [Twitter](${contactInfo.twitter})`);
 
     return parts.length > 0
-      ? `## <div align="center">${user.fullName}</div>
+      ? `## <div align="center">${user?.fullName || ""}</div>
         \n\n<div align="center">\n\n${parts.join(" | ")}\n\n</div>`
       : "";
-  };
+  }, [formValues, user?.fullName]);
 
-  const getCombinedContent = () => {
+  const getCombinedContent = useCallback(() => {
     const { summary, skills, experience, education, projects } = formValues;
     return [
       getContactMarkdown(),
@@ -108,7 +86,29 @@ export default function ResumeBuilder({ initialContent }) {
     ]
       .filter(Boolean)
       .join("\n\n");
-  };
+  }, [formValues, getContactMarkdown]);
+
+  useEffect(() => {
+    if (initialContent) setActiveTab("preview");
+  }, [initialContent]);
+
+  // Update preview content when form values change
+  useEffect(() => {
+    if (activeTab === "edit") {
+      const newContent = getCombinedContent();
+      setPreviewContent(newContent ? newContent : initialContent);
+    }
+  }, [activeTab, getCombinedContent, initialContent]);
+
+  // Handle save result
+  useEffect(() => {
+    if (saveResult && !isSaving) {
+      toast.success("Resume saved successfully!");
+    }
+    if (saveError) {
+      toast.error(saveError.message || "Failed to save resume");
+    }
+  }, [saveResult, saveError, isSaving]);
 
   const [isGenerating, setIsGenerating] = useState(false);
 

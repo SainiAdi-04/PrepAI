@@ -27,7 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import useFetch from "@/hooks/use-fetch";
-import { onboardingSchema } from "@/app/lib/schema";
+import { onboardingSchema } from "@/lib/schema";
 import { updateUser } from "@/actions/user";
 
 const OnboardingForm = ({ industries }) => {
@@ -71,7 +71,7 @@ const OnboardingForm = ({ industries }) => {
       router.push("/dashboard");
       router.refresh();
     }
-  }, [updateResult, updateLoading]);
+  }, [updateResult, updateLoading, router]);
 
   const watchIndustry = watch("industry");
 

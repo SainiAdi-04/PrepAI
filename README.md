@@ -149,7 +149,6 @@ prepai/
 │   ├── (auth)/                   # Authentication routes
 │   ├── (main)/                   # Main product routes
 │   ├── api/                      # API routes (Inngest)
-│   ├── lib/                      # App-level helpers/schemas
 │   ├── globals.css               # Global styles
 │   ├── layout.js                 # Root layout
 │   └── page.jsx                  # Landing page
@@ -160,6 +159,7 @@ prepai/
 ├── lib/                          # Prisma, Inngest, utilities
 ├── prisma/                       # Prisma schema/migrations
 ├── public/                       # Static assets
+├── screenshots/                  # Demo/reference screenshots
 ├── .env.example                  # Environment variable template
 ├── .gitignore                    # Ignore rules
 ├── components.json               # shadcn component config
