@@ -4,7 +4,7 @@ PrepAI - AI-Powered Placement Preparation Platform
 > Transform your career preparation with intelligent AI-driven insights and personalized learning experiences.
 
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js) ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&logo=javascript) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?style=flat-square&logo=tailwind-css) ![Gemini API](https://img.shields.io/badge/Gemini-API-4285F4?style=flat-square&logo=google)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js) ![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&logo=javascript) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css) ![Gemini API](https://img.shields.io/badge/Gemini-API-4285F4?style=flat-square&logo=google)
 
 🚀 Overview
 -----------
@@ -48,7 +48,7 @@ PrepAI is a cutting-edge placement preparation platform that leverages artificia
 ### Frontend
 
 -   **Framework**: Next.js 15 with App Router
--   **UI Library**: React 18 with JavaScript
+-   **UI Library**: React 19 with JavaScript
 -   **Styling**: Tailwind CSS
 -   **Components**: Shadcn
 
@@ -144,50 +144,30 @@ PrepAI is a cutting-edge placement preparation platform that leverages artificia
 
 ```
 prepai/
-├── ai/                           # AI and Machine Learning Components
-├── actions/                      # Server Actions
-│   ├── dashboard.js              # Dashboard related actions
-│   ├── interview.js              # Interview preparation actions
-│   ├── resume.js                 # Resume generation actions
-│   └── user.js                   # User management actions
-├── app/                          # Next.js App Router
+├── actions/                      # Server actions
+├── app/                          # App Router pages/layouts
 │   ├── (auth)/                   # Authentication routes
-│   ├── (main)/                   # Main application routes
-│   ├── api/                      # API routes
-│   ├── lib/                      # App-level utilities
+│   ├── (main)/                   # Main product routes
+│   ├── api/                      # API routes (Inngest)
+│   ├── lib/                      # App-level helpers/schemas
 │   ├── globals.css               # Global styles
 │   ├── layout.js                 # Root layout
-│   └── page.jsx                  # Home page
-├── components/                   # Reusable UI Components
-│   ├── ui/                       # Base UI components
-│   │   ├── header.jsx            # Application header
-│   │   ├── hero.jsx              # Hero section component
-│   │   └── theme-provider.jsx    # Theme context provider
-├── data/                         # Static Data and Configurations
-│   └── industries.js             # Industry-specific data
-├── hooks/                        # Custom React Hooks
-│   └── use-fetch.js              # Custom fetch hook
-├── lib/                          # Utility Functions and Configurations
-│   ├── generated/                # Auto-generated files
-│   ├── inngest/                  # Background job configurations
-│   │   ├── checkUser.js          # User verification jobs
-│   │   ├── prisma.js             # Database job utilities
-│   │   └── utils.js              # Inngest utilities
-├── node_modules/                 # Dependencies
-├── prisma/                       # Database Schema and Migrations
-├── public/                       # Static Assets
-├── .env.local                    # Environment variables
-├── .gitignore                    # Git ignore rules
-├── components.json               # Component configuration
-├── eslint.config.mjs             # ESLint configuration
-├── jsconfig.json                 # JavaScript configuration
-├── middleware.js                 # Next.js middleware
-├── next.config.mjs               # Next.js configuration
-├── package-lock.json             # Lock file
-├── package.json                  # Dependencies and scripts
-├── postcss.config.mjs            # PostCSS configuration
+│   └── page.jsx                  # Landing page
+├── components/                   # Reusable UI components
+│   └── ui/                       # Base shadcn components
+├── data/                         # Static data/config
+├── hooks/                        # Custom hooks
+├── lib/                          # Prisma, Inngest, utilities
+├── prisma/                       # Prisma schema/migrations
+├── public/                       # Static assets
+├── .env.example                  # Environment variable template
+├── .gitignore                    # Ignore rules
+├── components.json               # shadcn component config
+├── middleware.js                 # Clerk route protection
+├── next.config.mjs               # Next.js config
+├── package.json                  # Scripts and dependencies
 ├── README.md                     # Project documentation
-└── tailwind.config.js            # Tailwind CSS configuration
+└── tailwind.config.js            # Tailwind config
 ```
 
 -----------------

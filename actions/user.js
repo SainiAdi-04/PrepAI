@@ -30,7 +30,7 @@ export async function updateUser(data) {
         if (!industryInsight) {
           const insights = await generateAIInsights(data.industry);
 
-          industryInsight = await db.industryInsight.create({
+          industryInsight = await tx.industryInsight.create({
             data: {
               industry: data.industry,
               ...insights,
@@ -69,12 +69,6 @@ export async function getUserOnboardingStatus() {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
-  const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
-  });
-
-  if (!user) throw new Error("User not found");
-
   try {
     const user = await db.user.findUnique({
       where: {
@@ -84,6 +78,8 @@ export async function getUserOnboardingStatus() {
         industry: true,
       },
     });
+
+    if (!user) throw new Error("User not found");
 
     return {
       isOnboarded: !!user?.industry,

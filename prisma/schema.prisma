@@ -32,7 +32,7 @@ model User{
 
 
   skills          String[]
-  assesments      Assessment[]
+  assessments     Assessment[]
   resume          Resume?
 }
 
